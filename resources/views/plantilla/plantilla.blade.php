@@ -85,20 +85,49 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="{{url('administrador')}}" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p>Administrador</p>
+                        <a href="{{url('revision')}}" class="nav-link">
+                            <i class="nav-icon fas fa-check-square"></i>
+                            <p>Revisionesss</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
                             <p>
-                                Widgets
-                                <span class="right badge badge-danger">New</span>
+                                Reportes
+                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/tables/simple.html" class="nav-link">
+                                    <i class="far fa-file-excel nav-icon"></i>
+                                    <p>Excel</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/tables/simple.html" class="nav-link">
+                                    <i class="far fa-file-pdf nav-icon"></i>
+                                    <p>PDF</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/tables/simple.html" class="nav-link">
+                                    <i class="far fa-chart-bar nav-icon"></i>
+                                    <p>Graficos</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="pages/widgets.html" class="nav-link">--}}
+{{--                            <i class="nav-icon fas fa-th"></i>--}}
+{{--                            <p>--}}
+{{--                                Widgets--}}
+{{--                                <span class="right badge badge-danger">New</span>--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -133,10 +162,10 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2020 <a href="">Pronatel.com</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.0.5
+            <b>Version</b> 1
         </div>
     </footer>
 
