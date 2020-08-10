@@ -14,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('plantilla.plantilla');
+    return view('auth.login');
 });
+//Rutas de los controladores
 Route::Resource('revision','RevisionController');
+Route::Resource('administrador','AdministradorController');
+Route::Resource('ingeniero','IngenieroController');
+Route::Resource('espectador','EspectadorController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('tablet/operativa','Revision@operativa');
+Route::get('tablet/observada','Revision@observada');

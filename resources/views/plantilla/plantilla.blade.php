@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>SWPRONATEL</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -54,6 +54,27 @@
                     <i class="fas fa-th-large"></i>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+{{--                    <img class="img-avatar" src="{{asset('plantilla/img/avatars/6.jpg')}}" alt="admin@bootstrapmaster.com">--}}
+                    <i class="fa fa-user-circle"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <div class="dropdown-header text-center">
+                        <strong>Cuenta</strong>
+                    </div>
+                    <a class="dropdown-item" href="{{url('pwrd')}}">
+                        <i class="fa fa-wrench"></i> Password</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();"><i class="fa fa-lock"></i> Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
         </ul>
     </nav>
     <!-- /.navbar -->
@@ -64,7 +85,7 @@
         <a href="index3.html" class="brand-link">
             <img src="{{asset('plantilla/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">INICIO</span>
+            <span class="brand-text font-weight-light">PRONATEL</span>
         </a>
 
         <!-- Sidebar -->
@@ -85,9 +106,44 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
+                        <a href="{{url('home')}}" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-user-friends"></i>
+                            <p>
+                                Usuarios
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url('administrador')}}" class="nav-link">
+                                    <i class="far fa-user-circle nav-icon"></i>
+                                    <p>Administradores</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('ingeniero')}}" class="nav-link">
+                                    <i class="far fa-user-circle nav-icon"></i>
+                                    <p>Ingenieros TI</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('espectador')}}" class="nav-link">
+                                    <i class="far fa-user-circle nav-icon"></i>
+                                    <p>Espectadores</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{url('revision')}}" class="nav-link">
                             <i class="nav-icon fas fa-check-square"></i>
-                            <p>Revisionesss</p>
+                            <p>Revisiones</p>
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
@@ -233,6 +289,17 @@
             "responsive": true,
         });
     });
+</script>
+<script>
+    function mueveReloj(){
+        momentoActual = new Date()
+        hora = momentoActual.getHours()
+        minuto = momentoActual.getMinutes()
+        segundo = momentoActual.getSeconds()
+        horaImprimible = hora + " : " + minuto + " : " + segundo
+        document.form_reloj.reloj.value = horaImprimible
+        setTimeout("mueveReloj()",1000)
+    }
 </script>
 </body>
 </html>

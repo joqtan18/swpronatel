@@ -24,8 +24,9 @@
                             <tr>
                                 <th>DNI</th>
                                 <th>N° Serie</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
+                                <th>Marca</th>
+                                <th>Propietario</th>
+                                <th>Hora</th>
                                 <th>Estado Tableta</th>
                                 <th>Opciones</th>
                             </tr>
@@ -34,13 +35,32 @@
                             <tr>
                                 <td>70327395</td>
                                 <td>19685485685</td>
-                                <td>Joseph Joqtan</td>
-                                <td>Rodriguez Richarte</td>
+                                <td>Advance</td>
+                                <td>Joseph Joqtan, Rodriguez Richarte</td>
+                                <td>19:15:55</td>
                                 <td>
 
-                                        <span class="badge badge-success">Operativo</span>
+                                        <span class="badge badge-success">0Operativo</span>
 
-                                        <span class="badge badge-danger">Observado</span>
+                                        <span class="badge badge-danger">1Observado</span>
+
+                                </td>
+                                <td>
+                                    <a data-toggle="modal" class="btn btn-sm btn-info" title="Info de tableta"><i class="fa fa-search"></i></a>
+                                    <a data-toggle="modal" class="btn btn-sm btn-warning" title="editar tableta"><i class="fa fa-edit"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>70327395</td>
+                                <td>19685485685</td>
+                                <td>Advance</td>
+                                <td>Joseph Joqtan, Rodriguez Richarte</td>
+                                <td>20:15:55</td>
+                                <td>
+
+                                    <span class="badge badge-success">0Operativo</span>
+
+                                    <span class="badge badge-danger">1Observado</span>
 
                                 </td>
                                 <td>
