@@ -16,7 +16,7 @@
         <dir class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Administradores</strong>
+                    <strong>Registro de Revisiones de Tablets</strong>
                 </div>
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">

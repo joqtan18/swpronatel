@@ -111,6 +111,7 @@
                             <p>Inicio</p>
                         </a>
                     </li>
+                    @if(Auth::user()->hasrole('admin'))
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-friends"></i>
@@ -140,6 +141,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a href="{{url('revision')}}" class="nav-link">
                             <i class="nav-icon fas fa-check-square"></i>
