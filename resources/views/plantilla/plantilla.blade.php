@@ -78,7 +78,12 @@
         </ul>
     </nav>
     <!-- /.navbar -->
-
+    <?php
+    $trab_data = DB::table('trabajador')
+        ->join('role_user','role_user.user_id','trabajador.trab_dni')
+        ->join('roles','roles.id','role_user.role_id')
+        ->where('trabajador.trab_dni','=',Auth::user()->usuario)->first();
+    ?>
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
@@ -96,7 +101,7 @@
                     <img src="{{asset('plantilla/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">ADMINISTRADOR</a>
+                    <a href="#" class="d-block">{{$trab_data->description}}</a>
                 </div>
             </div>
 

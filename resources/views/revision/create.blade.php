@@ -26,11 +26,11 @@
                             <div class="form-group">
                                 <label for="">Estado de la Tablet</label><code> *</code>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estadotablet" value="0">
+                                    <input class="form-check-input" type="radio" name="estadotablet" value="0" required>
                                     <label class="form-check-label">Operativa</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estadotablet" value="1">
+                                    <input class="form-check-input" type="radio" name="estadotablet" value="1" required>
                                     <label class="form-check-label">Observada</label>
                                 </div>
                             </div>

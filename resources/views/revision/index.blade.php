@@ -26,6 +26,7 @@
                                 <th>N° Serie</th>
                                 <th>Marca</th>
                                 <th>Propietario</th>
+                                <th>Palet</th>
                                 <th>Hora</th>
                                 <th>Estado Tableta</th>
                                 <th>Opciones</th>
@@ -37,6 +38,7 @@
                                 <td>19685485685</td>
                                 <td>Advance</td>
                                 <td>Joseph Joqtan, Rodriguez Richarte</td>
+                                <td>04</td>
                                 <td>19:15:55</td>
                                 <td>
 
@@ -54,7 +56,8 @@
                                 <td>70327395</td>
                                 <td>19685485685</td>
                                 <td>Advance</td>
-                                <td>Joseph Joqtan, Rodriguez Richarte</td>
+                                <td>Milagros Rubi, Sandoval Castro</td>
+                                <td>03</td>
                                 <td>20:15:55</td>
                                 <td>
 
