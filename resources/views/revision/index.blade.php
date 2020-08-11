@@ -33,44 +33,27 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($data as $rev)
                             <tr>
-                                <td>70327395</td>
-                                <td>19685485685</td>
-                                <td>Advance</td>
-                                <td>Joseph Joqtan, Rodriguez Richarte</td>
-                                <td>04</td>
-                                <td>19:15:55</td>
+                                <td>{{$rev->usuario}}</td>
+                                <td>{{$rev->n_serie}}</td>
+                                <td>{{$rev->marca}}</td>
+                                <td>{{$rev->trab_nom.', '.$rev->trab_ape}}</td>
+                                <td>{{$rev->n_palet}}</td>
+                                <td>{{$rev->hora}}</td>
                                 <td>
-
-                                        <span class="badge badge-success">0Operativo</span>
-
-                                        <span class="badge badge-danger">1Observado</span>
-
+                                    @if($rev->estado == 0)
+                                        <span class="badge badge-success">Operativa</span>
+                                    @else
+                                        <span class="badge badge-danger">Observada</span>
+                                    @endif
                                 </td>
                                 <td>
                                     <a data-toggle="modal" class="btn btn-sm btn-info" title="Info de tableta"><i class="fa fa-search"></i></a>
                                     <a data-toggle="modal" class="btn btn-sm btn-warning" title="editar tableta"><i class="fa fa-edit"></i></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>70327395</td>
-                                <td>19685485685</td>
-                                <td>Advance</td>
-                                <td>Milagros Rubi, Sandoval Castro</td>
-                                <td>03</td>
-                                <td>20:15:55</td>
-                                <td>
-
-                                    <span class="badge badge-success">0Operativo</span>
-
-                                    <span class="badge badge-danger">1Observado</span>
-
-                                </td>
-                                <td>
-                                    <a data-toggle="modal" class="btn btn-sm btn-info" title="Info de tableta"><i class="fa fa-search"></i></a>
-                                    <a data-toggle="modal" class="btn btn-sm btn-warning" title="editar tableta"><i class="fa fa-edit"></i></a>
-                                </td>
-                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

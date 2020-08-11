@@ -45,7 +45,6 @@
                                                 <input class="form-check-input" type="radio" name="estadotablet2" checked>
                                                 <label class="form-check-label">SP5730</label>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Otros">
                                         </div>
                                         <div class="form-group">
                                             <label>Nº DE SERIE </label><code> *</code>
@@ -53,14 +52,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">A QUE NUMERO DE PALET PERTENECE</label><code> *</code>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet3" value="0" >
-                                                <label class="form-check-label">4</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet3" value="1">
-                                                <label class="form-check-label">5</label>
-                                            </div>
+                                            <input type="number" class="form-control" >
                                         </div>
                                     </div>
                                 </div>

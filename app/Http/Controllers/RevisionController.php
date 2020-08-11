@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Revision;
+use App\Trabajador;
 use Illuminate\Http\Request;
+use DB;
 
 class RevisionController extends Controller
 {
     public function index()
     {
-        return view('revision.index');
+        $data = DB::table('revision')
+            ->join('trabajador','trabajador.trab_user','revision.usuario')
+            ->get();
+        return view('revision.index',['data'=>$data]);
     }
     public function create()
     {
