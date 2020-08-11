@@ -26,6 +26,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('tablet/operativa','Revision@operativa');
-Route::post('tablet/observada','Revision@observada');
+Route::post('tablet/operativa','RevisionController@operativa');
+Route::post('tablet/observada','RevisionController@observada');
 Route::get('administrador/estado','AdministradorController@');

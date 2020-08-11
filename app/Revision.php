@@ -12,11 +12,12 @@ class Revision extends Model
     protected $fillable = [
         'marca',
         'modelo',
-        'n_serie ',
+        'n_serie',
         'n_palet',
         'embalaje',
         'case_revision',
         'cargador_cable',
+        'tablet_enciende',
         'bateria',
         'puerto_micro_usb',
         'microsd',

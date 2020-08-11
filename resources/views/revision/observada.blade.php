@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <strong>Registro de tablets Observadas</strong>
                 </div>
-                <form action="{{url('revision')}}" method="POST" class="form-horizontal" onsubmit="return Comprobar();">
+                <form action="{{url('tablet/observada')}}" method="POST" class="form-horizontal" onsubmit="return Comprobar();">
                     @method('POST')
                     {{ csrf_field() }}
                     @if (count($errors)>0)
@@ -88,11 +88,11 @@
                                         <div class="form-group">
                                             <label for="">La Tablet enciende</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet6" value="0">
+                                                <input class="form-check-input" type="radio" name="tablet_enciende" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet6" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="tablet_enciende" value="NO" checked>
                                                 <label class="form-check-label">No</label>
                                             </div>
                                         </div>
@@ -115,15 +115,15 @@
                                             <label for="">Cuenta con Baterías en buen estado</label><code> *</code><br>
                                             <code>se verifica la retención de carga</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet8" value="0">
+                                                <input class="form-check-input" type="radio" name="bateria" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet8" value="1">
+                                                <input class="form-check-input" type="radio" name="bateria" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet8" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="bateria" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -131,45 +131,45 @@
                                             <label for="">Tiene Puerto USB o micro USB</label><code> *</code><br>
                                             <code>En el caso de ser micro USB debe contar con cable adaptador (otg)</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet9" value="0">
+                                                <input class="form-check-input" type="radio" name="puerto_micro_usb" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet9" value="1">
+                                                <input class="form-check-input" type="radio" name="puerto_micro_usb" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet9" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="puerto_micro_usb" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tiene Ranura para memoria externa microSD</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet11" value="0">
+                                                <input class="form-check-input" type="radio" name="microsd" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet11" value="1">
+                                                <input class="form-check-input" type="radio" name="microsd" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet11" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="microsd" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tiene Pantalla de 10.1" en buen estado</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet12" value="0">
+                                                <input class="form-check-input" type="radio" name="pantalla" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet12" value="1">
+                                                <input class="form-check-input" type="radio" name="pantalla" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet12" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="pantalla" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -177,30 +177,30 @@
                                             <label for="">La Resolución de pantalla es</label><code> *</code><br>
                                             <code>Si es OTRA, indicar la resolución</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet13" value="0">
+                                                <input class="form-check-input" type="radio" name="resolucion" value="800 x 1280">
                                                 <label class="form-check-label">800 x 1280</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet13" value="1">
+                                                <input class="form-check-input" type="radio" name="resolucion" value="1920 x 1080">
                                                 <label class="form-check-label">1920 x 1080</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet13" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="resolucion" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tiene CPU de cuatro núcleos o Quad Core</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet14" value="0">
+                                                <input class="form-check-input" type="radio" name="nucleos" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet14" value="1">
+                                                <input class="form-check-input" type="radio" name="nucleos" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet14" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="nucleos" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -208,15 +208,15 @@
                                             <label for="">Tiene Velocidad de CPU de 1.8 GHz</label><code> *</code><br>
                                             <code>Si es OTRA, indicar SOLO la cantidad de GHz. (el número) ej. 1.2</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet15" value="0" checked>
+                                                <input class="form-check-input" type="radio" name="velocidad_cpu" value="SI" checked>
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet15" value="1">
+                                                <input class="form-check-input" type="radio" name="velocidad_cpu" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet15" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="velocidad_cpu" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -224,15 +224,15 @@
                                             <label for="">Memoria RAM instalada</label><code> *</code><br>
                                             <code>Si es OTRA, indicar SOLO la cantidad de GB. (el número) ej. 4</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet16" value="0" >
+                                                <input class="form-check-input" type="radio" name="memoria_ram" value="2 GB" >
                                                 <label class="form-check-label">2 GB</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet16" value="1">
+                                                <input class="form-check-input" type="radio" name="memoria_ram" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet16" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="memoria_ram" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -240,150 +240,150 @@
                                             <label for="">Memoria de almacenamiento</label><code> *</code><br>
                                             <code>Si es OTRA, indicar SOLO la cantidad de GB. (el número) ej. 16</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet17" value="0">
+                                                <input class="form-check-input" type="radio" name="memoria_almace" value="32 GB">
                                                 <label class="form-check-label">32 GB</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet17" value="1">
+                                                <input class="form-check-input" type="radio" name="memoria_almace" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet17" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="memoria_almace" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">La Cámara frontal funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet18" value="0">
+                                                <input class="form-check-input" type="radio" name="camara_frontal" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet18" value="1">
+                                                <input class="form-check-input" type="radio" name="camara_frontal" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet18" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="camara_frontal" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">La Cámara trasera funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet19" value="0">
+                                                <input class="form-check-input" type="radio" name="camara_trasera" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet19" value="1">
+                                                <input class="form-check-input" type="radio" name="camara_trasera" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet19" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="camara_trasera" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">El Flash de la Cámara trasera funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet20" value="0">
+                                                <input class="form-check-input" type="radio" name="flash" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet20" value="1">
+                                                <input class="form-check-input" type="radio" name="flash" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet20" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="flash" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">La Conexión WI FI 802.1 1 b/g/n funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet21" value="0">
+                                                <input class="form-check-input" type="radio" name="wifi" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet21" value="1">
+                                                <input class="form-check-input" type="radio" name="wifi" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet21" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="wifi" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">La Conexión Bluetooth funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet22" value="0">
+                                                <input class="form-check-input" type="radio" name="bluetooth" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet22" value="1">
+                                                <input class="form-check-input" type="radio" name="bluetooth" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet22" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="bluetooth" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">El parlante y la conexión de auriculares funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet23" value="0">
+                                                <input class="form-check-input" type="radio" name="parlantes_auriculares" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet23" value="1">
+                                                <input class="form-check-input" type="radio" name="parlantes_auriculares" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet23" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="parlantes_auriculares" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">El microfono incorporado funciona</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet24" value="0">
+                                                <input class="form-check-input" type="radio" name="microfono" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet24" value="1">
+                                                <input class="form-check-input" type="radio" name="microfono" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet24" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="microfono" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Cuenta con FUNDA en buen estado</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet25" value="0">
+                                                <input class="form-check-input" type="radio" name="funda" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet25" value="1">
+                                                <input class="form-check-input" type="radio" name="funda" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet25" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="funda" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Cuenta con Teclado en perfecto funcionamiento</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet26" value="0">
+                                                <input class="form-check-input" type="radio" name="teclado" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet26" value="1">
+                                                <input class="form-check-input" type="radio" name="teclado" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet26" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="teclado" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -400,26 +400,26 @@
                                             <label for="">Indicar la VERSIÓN del Sistema operativo Android</label><code> *</code><br>
                                             <code>Solo ingresar el NUMERO de versión ej. 5 o 5.1</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet27" value="0" >
+                                                <input class="form-check-input" type="radio" name="version" value="9" >
                                                 <label class="form-check-label">9</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet27" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="version" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Se revisó la Configuración y arranque inicial</label><code> *</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet28" value="0" >
+                                                <input class="form-check-input" type="radio" name="configuracion" value="SI" >
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet28" value="1">
+                                                <input class="form-check-input" type="radio" name="configuracion" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet28" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="configuracion" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -427,15 +427,15 @@
                                             <label for="">Se realizo la Verificación de Aplicaciones Básicas instaladas</label><code> *</code><br>
                                             <code>Indique si realizó la verificación de las aplicaciones instaladas</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet29" value="0">
+                                                <input class="form-check-input" type="radio" name="veri_apk" value="SI">
                                                 <label class="form-check-label">Si</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet29" value="1">
+                                                <input class="form-check-input" type="radio" name="veri_apk" value="NO">
                                                 <label class="form-check-label">No</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="estadotablet29" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="veri_apk" value="OMITIR" checked>
                                                 <label class="form-check-label">Omitir</label>
                                             </div>
                                         </div>
@@ -443,142 +443,143 @@
                                             <label for="">Lista de Aplicaciones complementarias instaladas</label><br>
                                             <code>Marque las aplicaciones identificadas en la Tablet</code>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="0" onclick="marcar(this);">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="" onclick="marcar(this);">
                                                 <label class="form-check-label">Todos</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="0">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="01- Sugarizer.apk">
                                                 <label class="form-check-label">01- Sugarizer.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="02- Geogebra/Graficadora.apk">
                                                 <label class="form-check-label">02- Geogebra/Graficadora.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="03- Microsoft Word Write.apk">
                                                 <label class="form-check-label">03- Microsoft Word Write.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="04- Microsoft Excel View Edit.apk">
                                                 <label class="form-check-label">04- Microsoft Excel View Edit.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="05- Microsoft OneNote.apk">
                                                 <label class="form-check-label">05- Microsoft OneNote.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="06- Microsoft PowerPoint.apk">
                                                 <label class="form-check-label">06- Microsoft PowerPoint.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="07- Mindomo.apk">
                                                 <label class="form-check-label">07- Mindomo.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="08- XMind.apk">
                                                 <label class="form-check-label">08- XMind.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="09- Mekorama.apk">
                                                 <label class="form-check-label">09- Mekorama.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="10- Pintura de Bolsillo/Pocket paint.apk">
                                                 <label class="form-check-label">10- Pintura de Bolsillo/Pocket paint.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="11- Pocket Code.apk">
                                                 <label class="form-check-label">11- Pocket Code.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="12- ScratchJr.apk">
                                                 <label class="form-check-label">12- ScratchJr.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="13- Files by Google Clean up space.apk">
                                                 <label class="form-check-label">13- Files by Google Clean up space.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="14- FilmoraGo.apk">
                                                 <label class="form-check-label">14- FilmoraGo.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="15- Galería de fotos - QuickPic.apk">
                                                 <label class="form-check-label">15- Galería de fotos - QuickPic.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="16- Google Earth.apk<">
                                                 <label class="form-check-label">16- Google Earth.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="17- TeamViewer for Remote Control.apk">
                                                 <label class="form-check-label">17- TeamViewer for Remote Control.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="18- TeamViewer QuickSupport.apk">
                                                 <label class="form-check-label">18- TeamViewer QuickSupport.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="19- VLC.apk">
                                                 <label class="form-check-label">19- VLC.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="20- Lazarillo GPS.apk">
                                                 <label class="form-check-label">20- Lazarillo GPS.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="21- ASDRA Buscador de entidades.apk">
                                                 <label class="form-check-label">21- ASDRA Buscador de entidades.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="22- Leo con Grin.apk">
                                                 <label class="form-check-label">22- Leo con Grin.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="23- TapTapSee.apk">
                                                 <label class="form-check-label">23- TapTapSee.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="24- Dictapicto.apk">
                                                 <label class="form-check-label">24- Dictapicto.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="25- Día a Día.apk">
                                                 <label class="form-check-label">25- Día a Día.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="26- TEAyudo a JUGAR.apk">
                                                 <label class="form-check-label">26- TEAyudo a JUGAR.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="27- Aipoly Vision.apk">
                                                 <label class="form-check-label">27- Aipoly Vision.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="28- Araword.apk">
                                                 <label class="form-check-label">28- Araword.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="29- Eye games Dyslexia.apk">
                                                 <label class="form-check-label">29- Eye games Dyslexia.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="30- PictoDroid Lite.apk">
                                                 <label class="form-check-label">30- PictoDroid Lite.apk</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="estadotablet" value="1">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="31- PictogramAgenda.apk">
                                                 <label class="form-check-label">31- PictogramAgenda.apk</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label>OBSERVACIONES O COMENTARIOS DE HARDWARE</label>
-                                            <input type="text" class="form-control" placeholder="Tu respuesta ...">
+                                            <input type="text" class="form-control" name="comyob_hardware" placeholder="Tu respuesta ...">
                                         </div>
                                         <div class="form-group">
                                             <label>OBSERVACIONES O COMENTARIOS DE SOFTWARE</label>
-                                            <input type="text" class="form-control" placeholder="Tu respuesta ...">
+                                            <input type="text" class="form-control" name="comyob_software" placeholder="Tu respuesta ...">
                                         </div>
+                                        <input type="hidden" name="estado" value="1">
                                     </div>
                                 </div>
                             </div>
