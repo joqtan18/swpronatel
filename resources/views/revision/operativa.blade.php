@@ -440,7 +440,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Lista de Aplicaciones complementarias instaladas</label><code> *</code><br>
+                                            <label for="">Lista de Aplicaciones complementarias instaladas</label><br>
                                             <code>Marque las aplicaciones identificadas en la Tablet</code>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="estadotablet" value="0" onclick="marcar(this);">

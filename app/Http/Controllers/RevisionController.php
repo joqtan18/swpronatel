@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Revision;
+use Auth;
 use App\Trabajador;
 use Illuminate\Http\Request;
 use DB;
@@ -11,9 +12,17 @@ class RevisionController extends Controller
 {
     public function index()
     {
-        $data = DB::table('revision')
-            ->join('trabajador','trabajador.trab_user','revision.usuario')
-            ->get();
+        if(Auth::user()->hasrole('admin'))
+        {
+            $data = DB::table('revision')
+                ->join('trabajador','trabajador.trab_user','revision.usuario')
+                ->get();
+        } elseif(Auth::user()->hasrole('ing')){
+            $data = DB::table('revision')
+                ->join('trabajador','trabajador.trab_user','revision.usuario')
+                ->where('revision.usuario','=',Auth::user()->usuario)
+                ->get();
+        }
         return view('revision.index',['data'=>$data]);
     }
     public function create()
