@@ -29,3 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('tablet/operativa','RevisionController@operativa');
 Route::post('tablet/observada','RevisionController@observada');
 Route::get('administrador/estado','AdministradorController@');
+
+//Reportes
+Route::get('reporterevisionexcel/','RevisionController@descargarEXCEL');
+

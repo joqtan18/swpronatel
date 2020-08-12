@@ -3,6 +3,7 @@
     <div class="row mt-0">
         <div class="col-md-6">
             <a href="{{url('revision/create')}}" class="btn btn-primary">Registrar Tableta</a>
+            <a href="{{url('reporterevisionexcel/')}}" class="btn btn-success"><i class="fa fa-file-excel"></i></a>
         </div>
         <div class="col-md-6">
             @if (session('status'))

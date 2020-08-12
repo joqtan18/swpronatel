@@ -48,11 +48,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Nº DE SERIE </label><code> *</code>
-                                            <input type="text" class="form-control" name="n_serie" placeholder="Enter ..." required>
+                                            <input type="text" class="form-control" name="n_serie" maxlength="11" minlength="11" placeholder="Enter ..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="">A QUE NUMERO DE PALET PERTENECE</label><code> *</code>
-                                            <input type="number" class="form-control" name="n_palet">
+                                            <input type="number" class="form-control" name="n_palet" required>
                                         </div>
                                     </div>
                                 </div>
@@ -447,6 +447,10 @@
                                                 <label class="form-check-label">Todos</label>
                                             </div>
                                             <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="lista_apk[]" value="OMITIR" required>
+                                                <label class="form-check-label">Omitir</label>
+                                            </div>
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="lista_apk[]" value="01- Sugarizer.apk">
                                                 <label class="form-check-label">01- Sugarizer.apk</label>
                                             </div>
@@ -573,11 +577,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label>OBSERVACIONES O COMENTARIOS DE HARDWARE</label>
-                                            <input type="text" class="form-control" name="comyob_hardware" placeholder="Tu respuesta ...">
+                                            <input type="text" class="form-control" name="comyob_hardware" value="null" placeholder="Tu respuesta ...">
                                         </div>
                                         <div class="form-group">
                                             <label>OBSERVACIONES O COMENTARIOS DE SOFTWARE</label>
-                                            <input type="text" class="form-control" name="comyob_software" placeholder="Tu respuesta ...">
+                                            <input type="text" class="form-control" name="comyob_software" value="null" placeholder="Tu respuesta ...">
                                         </div>
                                         <input type="hidden" name="estado" value="1">
                                     </div>
