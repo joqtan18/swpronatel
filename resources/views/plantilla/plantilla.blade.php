@@ -163,19 +163,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
+                                <a href="{{url('reportemensualexcel')}}" class="nav-link">
                                     <i class="far fa-file-excel nav-icon"></i>
                                     <p>Excel</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
+                                <a href="" class="nav-link">
                                     <i class="far fa-file-pdf nav-icon"></i>
                                     <p>PDF</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
+                                <a href="{{url('reportemensualgrafico')}}" class="nav-link">
                                     <i class="far fa-chart-bar nav-icon"></i>
                                     <p>Graficos</p>
                                 </a>

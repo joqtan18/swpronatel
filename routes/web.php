@@ -32,4 +32,8 @@ Route::get('administrador/estado','AdministradorController@');
 
 //Reportes
 Route::get('reporterevisionexcel/','RevisionController@descargarEXCEL');
+Route::get('reportemensualexcel/','ReporteController@reportemensualExcel');
+Route::get('reportemensualgrafico/','ReporteController@reportemensualGrafico');
+
+
 

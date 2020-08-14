@@ -39,6 +39,7 @@ class RevisionController extends Controller
         }else{
             return view('revision.observada');
         }
+
     }
     public function show(Revision $revision)
     {
@@ -52,13 +53,18 @@ class RevisionController extends Controller
     {
         //
     }
-    public function destroy(Revision $revision)
+    public function destroy($id)
     {
-        //
+        $rev = Revision::find($id);
+        Revision::destroy($id);
+        return redirect()->route('revision.index')->with('status', 'Tablet Eliminado correctamente!');
     }
 
     public function observada(Request $request)
     {
+//        $this->validate($request,[
+//            'n_serie' => 'required|unique:revision,n_serie|numeric|digits:11'
+//        ]);
         $data = $request->all();
         $aplicaciones = "";
         foreach ($data['lista_apk'] as $key => $value) {
@@ -103,7 +109,7 @@ class RevisionController extends Controller
             'estado'=> $data['estado']
 
         ]);
-        return redirect()->route('revision.index')->with('status', 'Tablet OBSERVADA agregada correctamente!');
+        return redirect()->route('revision.index')->with('status2', 'Tablet OBSERVADA agregada correctamente!');
     }
 
     public function operativa(Request $request)

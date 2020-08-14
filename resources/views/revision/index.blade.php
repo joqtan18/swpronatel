@@ -3,12 +3,18 @@
     <div class="row mt-0">
         <div class="col-md-6">
             <a href="{{url('revision/create')}}" class="btn btn-primary">Registrar Tableta</a>
+            @if(Auth::user()->hasrole('admin'))
             <a href="{{url('reporterevisionexcel/')}}" class="btn btn-success"><i class="fa fa-file-excel"></i></a>
+            @endif
         </div>
         <div class="col-md-6">
             @if (session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}
+                </div>
+            @elseif(session('status2'))
+                <div class="alert alert-danger">
+                    {{ session('status2') }}
                 </div>
             @endif
         </div>
@@ -34,7 +40,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($data as $rev)
+                            @foreach($data as $rev)
                             <tr>
                                 <td>{{$rev->usuario}}</td>
                                 <td>{{$rev->n_serie}}</td>
@@ -50,11 +56,15 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a data-toggle="modal" class="btn btn-sm btn-info" title="Info de tableta"><i class="fa fa-search"></i></a>
+                                    <a data-toggle="modal" data-target="#modal-info-{{$rev->id_revision}}" title="Info de la tablet" class="btn btn-sm btn-info"><i class="fa fa-search"></i></a>
+                                    @include('revision.info')
                                     <a data-toggle="modal" class="btn btn-sm btn-warning" title="editar tableta"><i class="fa fa-edit"></i></a>
+                                    <a href="{{url('revision/'.$rev->id_revision.'/edit')}}" title="Editar tablet" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                    <a data-target="#modal-delete-{{$rev->id_revision}}" title="eliminar tablet" data-toggle="modal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                    @include('revision.delete')
                                 </td>
                             </tr>
-                        @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
