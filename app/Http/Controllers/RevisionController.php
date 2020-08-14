@@ -45,13 +45,17 @@ class RevisionController extends Controller
     {
         //
     }
-    public function edit(Revision $revision)
+    public function edit($id)
     {
-        //
+        $rev = Revision::find($id);
+        return view('revision.edit',['rev'=>$rev]);
     }
-    public function update(Request $request, Revision $revision)
+    public function update(Request $request, $id)
     {
-        //
+        $rev = Revision::find($id);
+        $request->all();
+        $rev->update($request->all());
+        return redirect()->route('revision.index')->with('status','Tablet editado correctamente!');
     }
     public function destroy($id)
     {

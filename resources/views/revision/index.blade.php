@@ -58,7 +58,6 @@
                                 <td>
                                     <a data-toggle="modal" data-target="#modal-info-{{$rev->id_revision}}" title="Info de la tablet" class="btn btn-sm btn-info"><i class="fa fa-search"></i></a>
                                     @include('revision.info')
-                                    <a data-toggle="modal" class="btn btn-sm btn-warning" title="editar tableta"><i class="fa fa-edit"></i></a>
                                     <a href="{{url('revision/'.$rev->id_revision.'/edit')}}" title="Editar tablet" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                                     <a data-target="#modal-delete-{{$rev->id_revision}}" title="eliminar tablet" data-toggle="modal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                     @include('revision.delete')
