@@ -4,7 +4,12 @@
         <div class="col-md-6">
             <a href="{{url('revision/create')}}" class="btn btn-primary">Registrar Tableta</a>
             @if(Auth::user()->hasrole('admin'))
+{{--                excel para el admin--}}
             <a href="{{url('reporterevisionexcel/')}}" class="btn btn-success"><i class="fa fa-file-excel"></i></a>
+            @endif
+            @if(Auth::user()->hasrole('ing'))
+{{--            excel para los ingenieros--}}
+            <a href="{{url('reporterevisioningexcel/')}}" class="btn btn-success"><i class="fa fa-file-excel"></i></a>
             @endif
         </div>
         <div class="col-md-6">
@@ -56,7 +61,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a data-toggle="modal" data-target="#modal-info-{{$rev->id_revision}}" title="Info de la tablet" class="btn btn-sm btn-info"><i class="fa fa-search"></i></a>
+                                    <a data-toggle="modal" data-target="#infomodal-{{$rev->id_revision}}" title="Info de la tablet" class="btn btn-sm btn-info"><i class="fa fa-search"></i></a>
                                     @include('revision.info')
                                     <a href="{{url('revision/'.$rev->id_revision.'/edit')}}" title="Editar tablet" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                                     <a data-target="#modal-delete-{{$rev->id_revision}}" title="eliminar tablet" data-toggle="modal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
@@ -73,5 +78,3 @@
 @endsection
 @section('scripts')
 @endsection
-{{--modelo para el modal--}}
-{{--<a data-toggle="modal" data-target="#modal-info-{{$alum->alum_id}}" class="btn btn-sm btn-info"><i class="fa fa-search"></i></a>--}}

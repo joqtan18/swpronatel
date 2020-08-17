@@ -8,6 +8,7 @@ use App\Trabajador;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\RevisionExport;
+use App\Exports\RevisioningExport;
 use DB;
 
 class RevisionController extends Controller
@@ -166,6 +167,11 @@ class RevisionController extends Controller
     }
     public function descargarEXCEL()
     {
-        return Excel::download(new RevisionExport, 'revison-tablets-pronatel.csv');
+        return Excel::download(new RevisionExport, 'revison-tablets-pronateladmin.csv');
     }
+    public function descargaringEXCEL()
+    {
+        return Excel::download(new RevisioningExport, 'revison-tablets-pronatelinge.csv');
+    }
+
 }

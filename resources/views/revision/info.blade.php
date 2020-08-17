@@ -1,23 +1,176 @@
-<div class="modal fade" id="modal-info-{{$rev->id_revision}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+<div class="modal fade" id="infomodal-{{$rev->id_revision}}">
+    <div class="modal-dialog">
+        <div class="modal-content bg-info">
             <div class="modal-header">
-                <h5 class="modal-title">Detalle de la Tablet</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+                <h4 class="modal-title">Info Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <p>Datos Tecnicos de la Tablet:</p>
-                <label class="form-control">serie: {{$rev->n_serie}}</label>
-                <label class="form-control">marca: {{$rev->marca}}</label>
-                <label class="form-control">hora: {{$rev->hora}}</label>
+                <p>One fine body&hellip;</p>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->id_revision}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="{{$rev->n_serie}}">
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-light">Save changes</button>
             </div>
         </div>
-        <!-- /.modal-content-->
+        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog-->
+    <!-- /.modal-dialog -->
 </div>

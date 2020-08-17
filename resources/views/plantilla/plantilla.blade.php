@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="{{asset('plantilla/plugins/jqvmap/jqvmap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('plantilla/dist/css/adminlte.min.css')}}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{asset('plantilla/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{asset('plantilla/plugins/toastr/toastr.min.css')}}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('plantilla/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
@@ -101,7 +105,7 @@
                     <img src="{{asset('plantilla/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{$trab_data->description}}</a>
+                    <a href="#" class="d-block">{{$trab_data->trab_nom}}</a>
                 </div>
             </div>
 
@@ -257,6 +261,10 @@
 <!-- JQVMap -->
 <script src="{{asset('plantilla/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('plantilla/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+<!-- SweetAlert2 -->
+<script src="{{asset('plantilla/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<!-- Toastr -->
+<script src="{{asset('plantilla/plugins/toastr/toastr.min.js')}}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{asset('plantilla/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
@@ -296,17 +304,6 @@
             "responsive": true,
         });
     });
-</script>
-<script>
-    function mueveReloj(){
-        momentoActual = new Date()
-        hora = momentoActual.getHours()
-        minuto = momentoActual.getMinutes()
-        segundo = momentoActual.getSeconds()
-        horaImprimible = hora + " : " + minuto + " : " + segundo
-        document.form_reloj.reloj.value = horaImprimible
-        setTimeout("mueveReloj()",1000)
-    }
 </script>
 </body>
 </html>

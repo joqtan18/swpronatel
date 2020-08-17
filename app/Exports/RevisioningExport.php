@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-
+use Auth;
 use App\Revision;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Events\AfterSheet;
 
 use DB;
 
-class RevisionExport implements FromCollection,WithHeadings
+class RevisioningExport implements FromCollection,WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -18,10 +18,11 @@ class RevisionExport implements FromCollection,WithHeadings
     public function collection()
     {
         return Revision::select('id_revision','marca','modelo','n_serie','n_palet','embalaje','case_revision','tablet_enciende',
-        'cargador_cable','bateria','puerto_micro_usb','microsd','pantalla','resolucion','nucleos','velocidad_cpu','memoria_ram','memoria_almace',
-        'camara_frontal','camara_trasera','flash','wifi','bluetooth','parlantes_auriculares','microfono','funda','teclado','version','configuracion',
-        'veri_apk','lista_apk','comyob_hardware','comyob_software','hora','estado','trab_ape','trab_nom','usuario')
+            'cargador_cable','bateria','puerto_micro_usb','microsd','pantalla','resolucion','nucleos','velocidad_cpu','memoria_ram','memoria_almace',
+            'camara_frontal','camara_trasera','flash','wifi','bluetooth','parlantes_auriculares','microfono','funda','teclado','version','configuracion',
+            'veri_apk','lista_apk','comyob_hardware','comyob_software','hora','estado','trab_ape','trab_nom','usuario')
             ->join('trabajador','trabajador.trab_dni','revision.usuario')
+            ->where('revision.usuario','=',Auth::user()->usuario)
             ->get();
     }
     public function registerEvents(): array
