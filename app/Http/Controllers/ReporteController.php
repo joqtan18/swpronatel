@@ -68,6 +68,7 @@ class ReporteController extends Controller
             ->get();
 
         $pdf = PDF::loadView('pdf.pdfdiariotablet',['data'=>$query,'hora'=>$hora]);
+        $pdf->setPaper('A4', 'landscape');
         return $pdf->download('Reporte:asistencia - Mensual.pdf');
     }
 }

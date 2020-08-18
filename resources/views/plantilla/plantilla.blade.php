@@ -157,6 +157,7 @@
                             <p>Revisiones</p>
                         </a>
                     </li>
+                    @if(Auth::user()->hasrole('admin'))
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
@@ -180,6 +181,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
 {{--                    <li class="nav-item">--}}
 {{--                        <a href="pages/widgets.html" class="nav-link">--}}
 {{--                            <i class="nav-icon fas fa-th"></i>--}}
