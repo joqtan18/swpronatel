@@ -32,7 +32,7 @@ Route::get('administrador/estado','AdministradorController@');
 
 //Reportes
 Route::get('reporterevisionexcel/','RevisionController@descargarEXCEL');
-
 Route::get('reporterevisioningexcel/','RevisionController@descargaringEXCEL');
-
-
+//PDF
+Route::get('reportepdfdiario/','ReporteController@reportediarioPDF');
+Route::post('recebirreportetablet/','ReporteController@recebirreporteTablet');
