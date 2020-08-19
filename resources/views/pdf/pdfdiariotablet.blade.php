@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html  lang="en">
-<H5><center>  "Año de la Universalización de la Salud" </center> </H5>
+<table style="height: 102px;" width="529">
+    <tbody>
+    <tr>
+        <td style="width: 256.8px;"><img src="{{asset('img/logo-pronatel.png')}}" height="75px"></td>
+        <td style="width: 257.6px; text-align: center;">
+            <H5>
+                <center>
+                    "Año de la Universalización de la Salud"
+                </center>
+            </H5>
+        </td>
+    </tr>
+    </tbody>
+</table>
 <head>
     <meta charset="utf-8">
     <title>Reporte de Tablets</title>
@@ -10,8 +23,7 @@
 </head>
 <body>
 <div>
-
-    <table border="1">
+    <table style="margin-left: auto; margin-right: auto;" border="1">
         <thead>
         <tr>
             <td style="text-align: center; background-color: #BDD7EE;" colspan="5">RESUMEN GENERAL DEL RESUMEN DE TABLETAS DEL: <b>{{date("d/m/Y", strtotime($hora))}}</b></td>
