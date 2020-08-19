@@ -10,7 +10,8 @@
 </head>
 <body>
 <div>
-    <table style="height: 246px; margin-left: auto; margin-right: auto;" border="1">
+
+    <table border="1">
         <thead>
         <tr>
             <td style="text-align: center; background-color: #BDD7EE;" colspan="5">RESUMEN GENERAL DEL RESUMEN DE TABLETAS DEL: <b>{{date("d/m/Y", strtotime($hora))}}</b></td>

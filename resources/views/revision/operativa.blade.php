@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Nº DE SERIE </label><code> *</code>
-                                            <input type="text" class="form-control" name="n_serie" maxlength="11" minlength="11" placeholder="Enter ..." required>
+                                            <input type="text" class="form-control @error('n_serie') is-invalid @enderror" name="n_serie" maxlength="11" minlength="11" placeholder="Enter ..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="">A QUE NUMERO DE PALET PERTENECE</label><code> *</code>

@@ -64,7 +64,7 @@ class ReporteController extends Controller
             ->where(DB::raw("(DATE_FORMAT(hora,'%Y-%m-%d'))"),$data['ini_fecha'])
 //                ->where('hora','=','2020-08-17 18:09:18')
             ->groupBy('revision.usuario')
-            ->orderBy('trabajador.trab_id','asc')
+            ->orderBy('trabajador.trab_nom','asc')
             ->get();
 
         $pdf = PDF::loadView('pdf.pdfdiariotablet',['data'=>$query,'hora'=>$hora]);
