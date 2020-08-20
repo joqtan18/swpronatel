@@ -1,5 +1,15 @@
 @extends('plantilla.plantilla')
 @section('contenido')
+    @if (count($errors)>0)
+        <div class="alert alert-danger">
+            <p>Corregir los siguientes campos:</p>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card card-primary">
@@ -9,16 +19,6 @@
                 <form action="{{url('tablet/operativa')}}" method="POST" class="form-horizontal" onsubmit="return Comprobar();">
                     @method('POST')
                     {{ csrf_field() }}
-                    @if (count($errors)>0)
-                        <div class="alert alert-danger">
-                            <p>Corregir los siguientes campos:</p>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{$error}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Nº DE SERIE </label><code> *</code>
-                                            <input type="text" class="form-control @error('n_serie') is-invalid @enderror" name="n_serie" maxlength="11" minlength="11" placeholder="Enter ..." required>
+                                            <input type="text" class="form-control" name="n_serie" placeholder="Enter ..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="">A QUE NUMERO DE PALET PERTENECE</label><code> *</code>

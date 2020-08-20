@@ -10,16 +10,6 @@
                 <form role="form" action="{{url('revision')}}" method="POST" class="form-horizontal">
                     @method('POST')
                     {{ csrf_field() }}
-                    @if (count($errors)>0)
-                        <div class="alert alert-danger">
-                            <p>Corregir los siguientes campos:</p>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{$error}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- radio -->

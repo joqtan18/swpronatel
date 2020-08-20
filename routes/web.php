@@ -29,6 +29,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('tablet/operativa','RevisionController@operativa');
 Route::post('tablet/observada','RevisionController@observada');
 Route::get('administrador/estado','AdministradorController@');
+Route::get('tablet/operativa','RevisionController@operativaget')->name('opget');
+Route::get('tablet/observada','RevisionController@observadaget')->name('obget');
 
 //Reportes
 Route::get('reporterevisionexcel/','RevisionController@descargarEXCEL');

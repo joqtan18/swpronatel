@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\RevisionExport;
 use App\Exports\RevisioningExport;
+use Carbon\Carbon;
 use DB;
 
 class RevisionController extends Controller
@@ -34,13 +35,19 @@ class RevisionController extends Controller
     }
     public function store(Request $request)
     {
+//        $this->validate($request,[
+//            'n_serie' => 'required|unique:revision,n_serie|numeric|digits:11'
+//        ]);
+
         $data = $request->all();
         if ($data['estadotablet']==0){
-            return view('revision.operativa');
-        }else{
-            return view('revision.observada');
-        }
 
+//            return view('revision.operativa');
+            return redirect()->route('opget');
+        }else{
+//            return view('revision.observada');
+            return redirect()->route('obget');
+        }
     }
     public function show(Revision $revision)
     {
@@ -67,9 +74,10 @@ class RevisionController extends Controller
 
     public function observada(Request $request)
     {
-//        $this->validate($request,[
-//            'n_serie' => 'required|unique:revision,n_serie|numeric|digits:11'
-//        ]);
+        $this->validate($request,[
+            'n_serie' => 'required|unique:revision,n_serie|numeric|digits:11'
+        ],['n_serie.unique'=>'EL número de Serie se esta Duplicando, porfavor ingrese otro valido']
+        );
         $data = $request->all();
         $aplicaciones = "";
         foreach ($data['lista_apk'] as $key => $value) {
@@ -119,12 +127,16 @@ class RevisionController extends Controller
 
     public function operativa(Request $request)
     {
+        $this->validate($request,[
+            'n_serie' => 'required|unique:revision,n_serie|numeric|digits:11'
+        ],['n_serie.unique'=>'EL número de Serie se esta Duplicando, porfavor ingrese otro valido']
+        );
         $data = $request->all();
         $aplicaciones = "";
         foreach ($data['lista_apk'] as $key => $value) {
-//            $aplicaciones = $value.", ";
             $aplicaciones.=''.$value.',';
         }
+        $hora = Carbon::now()->toDateTimeString();
 
         $obj = Revision::create([
             'marca'=> $data['marca'],
@@ -160,7 +172,8 @@ class RevisionController extends Controller
             'comyob_hardware'=> $data['comyob_hardware'],
             'comyob_software'=> $data['comyob_software'],
             'usuario' => Auth::user()->usuario,
-            'estado'=> $data['estado']
+            'estado'=> $data['estado'],
+            'hora' => $hora
 
         ]);
         return redirect()->route('revision.index')->with('status', 'Tablet OPERATIVA agregada correctamente!');
@@ -173,5 +186,12 @@ class RevisionController extends Controller
     {
         return Excel::download(new RevisioningExport, 'revison-tablets-pronatelinge.csv');
     }
-
+    public function operativaget()
+    {
+        return view('revision.operativa');
+    }
+    public function observadaget()
+    {
+        return view('revision.observada');
+    }
 }
