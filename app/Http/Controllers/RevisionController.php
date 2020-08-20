@@ -84,7 +84,7 @@ class RevisionController extends Controller
 //            $aplicaciones = $value.", ";
             $aplicaciones.=''.$value.',';
         }
-
+        $hora = Carbon::now()->toDateTimeString();
         $obj = Revision::create([
             'marca'=> $data['marca'],
             'modelo'=> $data['modelo'],
@@ -119,7 +119,8 @@ class RevisionController extends Controller
             'comyob_hardware'=> $data['comyob_hardware'],
             'comyob_software'=> $data['comyob_software'],
             'usuario' => Auth::user()->usuario,
-            'estado'=> $data['estado']
+            'estado'=> $data['estado'],
+            'hora' => $hora
 
         ]);
         return redirect()->route('revision.index')->with('status2', 'Tablet OBSERVADA agregada correctamente!');
