@@ -32,9 +32,14 @@ Route::get('administrador/estado','AdministradorController@');
 Route::get('tablet/operativa','RevisionController@operativaget')->name('opget');
 Route::get('tablet/observada','RevisionController@observadaget')->name('obget');
 
-//Reportes
+//ReportesExcel
 Route::get('reporterevisionexcel/','RevisionController@descargarEXCEL');
 Route::get('reporterevisioningexcel/','RevisionController@descargaringEXCEL');
 //PDF
+Route::get('reporteglobal/','ReporteController@reporteglobal');
+//Route::post('mostrarreporte/','ReporteController@mostrarreporte');
+
 Route::get('reportepdfdiario/','ReporteController@reportediarioPDF');
 Route::post('recebirreportetablet/','ReporteController@recebirreporteTablet');
+
+Route::post('mostrarreporte/','ReporteController@mostrarreporte');

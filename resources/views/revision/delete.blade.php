@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <p class="lead">¿Deseas Eliminar esta tablet?</p>
+                <p class="lead">¿Deseas Eliminar esta tablet del Usuario <b>{{$rev->trab_nom.','.$rev->trab_ape}}, con numero de Serie, <b>{{$rev->n_serie}}</b></b>?</p>
             </div>
             <div class="modal-footer">
                 <form action="{{url('revision/'.$rev->id_revision)}}" method="post">

@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">A QUE NUMERO DE PALET PERTENECE</label><code> *</code>
-                                            <input type="number" class="form-control" name="n_palet" value="{{$rev->n_palet}}" required>
+                                            <input type="text" class="form-control" name="n_palet" value="{{$rev->n_palet}}" required>
                                         </div>
                                     </div>
                                 </div>

@@ -176,6 +176,12 @@
                                     <p>PDF</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{url('reporteglobal')}}" class="nav-link">
+                                    <i class="far fa-file-pdf nav-icon"></i>
+                                    <p>Reporte</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     @endif

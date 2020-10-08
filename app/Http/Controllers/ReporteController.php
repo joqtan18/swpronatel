@@ -52,7 +52,6 @@ class ReporteController extends Controller
     {
         return view('reporte.reportepdfdiario');
     }
-
     public function recebirreporteTablet(Request $req)
     {
         $data = $req->all();
@@ -70,5 +69,26 @@ class ReporteController extends Controller
         $pdf = PDF::loadView('pdf.pdfdiariotablet',['data'=>$query,'hora'=>$hora]);
         $pdf->setPaper('A4', 'landscape');
         return $pdf->download('Reporte:asistencia - Mensual.pdf');
+    }
+    public function reporteglobal(Request $request)
+    {
+        return view('reporte.reporteglobal');
+    }
+
+    public function mostrarreporte(Request $req)
+    {
+        $data = $req->all();
+        $hora = $data['fecha'];
+        $query= DB::table('revision')
+            ->select(DB::raw('count(usuario) AS aa'),'usuario')
+            ->join('trabajador','trabajador.trab_user','revision.usuario')
+//            ->where(DB::raw(“DATE(hora) = ‘”.date(‘Y-m-d’).”‘”),'=',$data['ini_fecha'])
+            ->where(DB::raw("(DATE_FORMAT(hora,'%Y-%m-%d'))"),$data['fecha'])
+//                ->where('hora','=','2020-08-17 18:09:18')
+            ->groupBy('revision.usuario')
+            ->orderBy('trabajador.trab_nom','asc')
+            ->get();
+
+        return view('grafico.graficoreporteglobal',['data'=>$query,'fecha'=>$data['fecha'],'hora'=>$hora]);
     }
 }

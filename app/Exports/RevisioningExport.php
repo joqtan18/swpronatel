@@ -17,10 +17,10 @@ class RevisioningExport implements FromCollection,WithHeadings
     */
     public function collection()
     {
-        return Revision::select('id_revision','marca','modelo','n_serie','n_palet','embalaje','case_revision','tablet_enciende',
+        return Revision::select('id_revision','hora','usuario','trab_ape','trab_nom','marca','modelo','n_serie','n_palet','embalaje','case_revision','tablet_enciende',
             'cargador_cable','bateria','puerto_micro_usb','microsd','pantalla','resolucion','nucleos','velocidad_cpu','memoria_ram','memoria_almace',
             'camara_frontal','camara_trasera','flash','wifi','bluetooth','parlantes_auriculares','microfono','funda','teclado','version','configuracion',
-            'veri_apk','lista_apk','comyob_hardware','comyob_software','hora','estado','trab_ape','trab_nom','usuario')
+            'veri_apk','lista_apk','estado','comyob_hardware','comyob_software')
             ->join('trabajador','trabajador.trab_dni','revision.usuario')
             ->where('revision.usuario','=',Auth::user()->usuario)
             ->get();
@@ -46,6 +46,10 @@ class RevisioningExport implements FromCollection,WithHeadings
 
         return   [
             'ID',
+            'HORA',
+            'DNI',
+            'Apellidos',
+            'Nombres',
             'MARCA',
             'MODELO',
             'NUMERO DE SERIE',
@@ -76,13 +80,9 @@ class RevisioningExport implements FromCollection,WithHeadings
             'Se reviso la Configuracion y arranque inicial',
             'Se realizo la Verificacion de Aplicaciones Basicas instaladas',
             'Lista de Aplicaciones complementarias instaladas',
-            'OBSERVACIONES O COMENTARIOS DE HARDWARE',
-            'OBSERVACIONES O COMENTARIOS DE SOFTWARE',
-            'HORA',
             'Estado final de la Tablet',
-            'Apellidos',
-            'Nombres',
-            'DNI'
+            'OBSERVACIONES O COMENTARIOS DE HARDWARE',
+            'OBSERVACIONES O COMENTARIOS DE SOFTWARE'
         ];
 
     }
